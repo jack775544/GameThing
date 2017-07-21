@@ -1,6 +1,11 @@
 html, body {
-    font-family: "consolas";
+    font-family: 'VT323', monospace;
+    font-stretch: ultra-expanded;
     background-color: black;
+    text-transform: uppercase;
+    color: orange;
+    line-height: 20pt;
+    font-size: 14pt;
 }
 
 h1 {
@@ -11,14 +16,21 @@ h1 {
     float: left;
     height: 300px;
     width: 500px;
-    border: 1px solid orange;
+    border: 1px dashed orange;
     margin: 10px;
     padding: 10px;
     background-color: black;
-    color: orange
 }
 
 .box:hover {
     color: black;
     background-color: orange;
+}
+
+p {
+    margin: 0;
+}
+
+#header {
+    margin-bottom: 20px;
 }
