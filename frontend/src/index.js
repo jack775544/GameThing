@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './App.jsx';
 import registerServiceWorker from './registerServiceWorker';
 
-setInterval(function(){ReactDOM.render(<App />, document.getElementById('root'));},5000)
-// ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(React.createElement(App), document.getElementById('root'));
 registerServiceWorker();
