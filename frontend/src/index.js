@@ -4,5 +4,6 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+setInterval(function(){ReactDOM.render(<App />, document.getElementById('root'));},5000)
+// ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

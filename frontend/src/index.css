@@ -1,6 +1,5 @@
 html, body {
-    font-family: 'VT323', monospace;
-    font-stretch: ultra-expanded;
+    font-family: 'VT323', monospace; 
     background-color: black;
     text-transform: uppercase;
     color: orange;

@@ -16,16 +16,16 @@ class App extends Component {
     render() {
         return (
             <div>
-                <div id="header">
+                <header id="header">
                     <Separator />
                     <h1>Command & Control OS v3.4.1</h1>
                     <Separator />
                     <p>Access Level: 4</p>
                     <p>Authorisation: Authorised</p>
-                </div>
+                </header>
                 <Status theatre="place" date="date" time="time oclock" />
                 <Weather forcast="forcast" viewDistance="100m" conditions="cloudy" />
-                <Order unit="5th thing battalion" subunits={["first division", "second division"]} />
+                <Order unit="5th thing battalion" subunits={["first division", "second division", "third division"]} />
             </div>
         );
     }
@@ -52,9 +52,9 @@ class Subunit extends Component {
 
 class Order extends Component {
     render() {
-        var subunitList = this.props.subunits.map(function (r) {
+        var subunitList = this.props.subunits.map(function (r, i) {
             return (
-                <Subunit name={r} />
+                <Subunit name={r} key={i} />
             );
         });
         return (
@@ -64,11 +64,13 @@ class Order extends Component {
                 <Separator />
                 <div>
                     <table>
+                        <tbody>
                         <tr>
                             <td>Unit: </td>
                             <td>{this.props.unit} </td>
                         </tr>
                         {subunitList}
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -84,6 +86,7 @@ class Status extends Component {
                 <h1>Theatre Status</h1>
                 <Separator />
                 <table>
+                    <tbody>
                     <tr>
                         <td>Theatre: </td>
                         <td>{this.props.theatre}</td>
@@ -96,6 +99,7 @@ class Status extends Component {
                         <td>Time: </td>
                         <td>{this.props.time}</td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
         );
@@ -110,6 +114,7 @@ class Weather extends Component {
                 <h1>Weather Forecast</h1>
                 <Separator />
                 <table>
+                    <tbody>
                     <tr>
                         <td>Forecast: </td><td>{this.props.forcast}</td>
                     </tr>
@@ -119,6 +124,7 @@ class Weather extends Component {
                     <tr>
                         <td>Conditions: </td><td>{this.props.conditions}</td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
         );
