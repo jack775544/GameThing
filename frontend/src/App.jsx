@@ -29,8 +29,9 @@ class App extends Component {
         (function updateData() {
             axios.get('state.json').then(function (r) {
                 self.setState(r.data);
+            }).then(function(){
+                self.update = setTimeout(updateData, 5000);
             });
-            self.update = setTimeout(updateData, 5000);
         })();
     }
 
