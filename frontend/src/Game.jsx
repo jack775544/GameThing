@@ -29,7 +29,7 @@ class Game extends Component {
     componentDidMount() {
         let self = this;
         (function updateData() {
-            axios.get('state.json').then(function (r) {
+            axios.get('/api/state').then(function (r) {
                 self.setState(r.data);
             }).then(function(){
                 self.update = setTimeout(updateData, 5000);

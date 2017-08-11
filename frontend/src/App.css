@@ -62,3 +62,19 @@ p {
 #header {
     margin-bottom: 20px;
 }
+
+.admin > h2 {
+    display: inline-block;
+    margin: 0;
+}
+
+textarea {
+    height: 150px;
+    width: 400px;
+}
+
+.journal {
+    font-size: 1px;
+    line-height: 1px;
+    color: #111;
+}

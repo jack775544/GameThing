@@ -1,12 +1,11 @@
 import waitress
 import time
 
-from flask import Flask
-from flask import jsonify, send_from_directory
+from flask import Flask, jsonify, send_from_directory, request
 
 app = Flask(__name__, static_url_path='')
 
-state = {
+game_state = {
     "unit": "The thingo brigade",
     "subunits": [
         "1st regiment",
@@ -37,7 +36,17 @@ def main():
 
 @app.route("/api/state")
 def api_state():
-    return jsonify(state)
+    print(game_state)
+    return jsonify(game_state)
+
+@app.route("/api/update", methods=['POST'])
+def update_state():
+    # print(request.json)
+    # print(game_state)
+    global game_state
+    game_state = request.json
+    print(game_state)
+    return "hello world"
 
 if __name__ == "__main__":
     waitress.serve(app, port=5000)
